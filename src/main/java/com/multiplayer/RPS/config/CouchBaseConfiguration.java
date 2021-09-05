@@ -21,7 +21,7 @@ public class CouchBaseConfiguration {
     }
 
     @ConditionalOnMissingBean(CouchBaseConnector.class)
-    @Bean(name = "couchbase")
+    @Bean(name = "couchbase  ")
     @DependsOn("cluster")
     public CouchBaseConnector couchBaseConnector() {
         log.info("couchBaseConnector starting");
