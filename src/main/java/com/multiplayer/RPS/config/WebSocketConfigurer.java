@@ -16,6 +16,7 @@ public class WebSocketConfigurer implements WebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/beat")
                 .setAllowedOriginPatterns("*")
+                .setAllowedOrigins("http://localhost:9090")
                 .withSockJS();
     }
 

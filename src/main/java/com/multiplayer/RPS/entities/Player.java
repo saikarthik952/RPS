@@ -1,14 +1,12 @@
 package com.multiplayer.RPS.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Builder
 public class Player {
 
     String id;

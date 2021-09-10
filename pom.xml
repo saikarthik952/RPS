@@ -19,6 +19,10 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.3</spring-cloud.version>
+		<maven.exec.skip>true</maven.exec.skip><!--Default-->
+		<maven.compiler.release>11</maven.compiler.release>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -93,6 +97,12 @@
 		<directory>${project.basedir}/target</directory>
 		<plugins>
 			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<forceJavacCompilerUse>true</forceJavacCompilerUse>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
@@ -110,6 +120,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<packagingExcludes>WEB-INF/lib/*gson*.jar</packagingExcludes>
+					<skip>${maven.exec.skip}</skip>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -119,6 +130,7 @@
 				<configuration>
 					<workingDirectory>src/main/rps</workingDirectory>
 					<installDirectory>target</installDirectory>
+					<skip>${maven.exec.skip}</skip>
 				</configuration>
 				<executions>
 					<execution>
@@ -157,6 +169,7 @@
 					<execution>
 						<phase>generate-resources</phase>
 						<configuration>
+							<skip>${maven.exec.skip}</skip>
 							<target>
 								<copy todir="${project.build.directory}/classes/static">
 									<fileset dir="${project.basedir}/src/main/rps/build/static" />

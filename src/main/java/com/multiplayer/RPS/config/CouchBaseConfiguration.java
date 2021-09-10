@@ -17,7 +17,7 @@ public class CouchBaseConfiguration {
     public Cluster connectDB() {
         log.info("Connect DB ");
         return Cluster.connect("127.0.0.1", ClusterOptions
-        .clusterOptions("saikarthik", "TestPassword@1"));
+                .clusterOptions("saikarthik", "TestPassword@1"));
     }
 
     @ConditionalOnMissingBean(CouchBaseConnector.class)
