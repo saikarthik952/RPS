@@ -4,9 +4,8 @@ import java.util.Random;
 
 public  class RandomIdGenerator
 {
-    private static char[] _base62chars =
-            "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-                    .toCharArray();
+    final public static String letters =  "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    public static char[] _base62chars = letters.toCharArray();
 
     private static Random _random = new Random();
 

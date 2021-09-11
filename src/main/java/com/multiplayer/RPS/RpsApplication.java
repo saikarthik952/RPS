@@ -1,14 +1,15 @@
 package com.multiplayer.RPS;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
+import reactor.tools.agent.ReactorDebugAgent;
 
 @SpringBootApplication
 public class RpsApplication {
 
 	public static void main(String[] args) {
+		ReactorDebugAgent.init();
+		ReactorDebugAgent.processExistingClasses();
 		SpringApplication app = new SpringApplication(RpsApplication.class);
 		app.run(args);
 	}

@@ -8,10 +8,11 @@ public enum Action {
     CONNECTION_LOST(8),
     NO_ACTION(5),
     CREATED_MATCH_ID(6),
-    WAITING_FOR_OTHER_PLAYER(7),
+    PLAYER_JOINED(7),
     GAME_CREATED(10),
     MATCH_ABORTED(11),
     GAME_NOT_CREATED(99),
+    PLAYER_NOT_ADDED(88),
     PLAYER_1(12),
     PLAYER_2(13);
     int actionCode;

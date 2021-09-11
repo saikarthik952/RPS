@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.function.Function;
 
 @Data
-@Builder
+@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class Game  {
@@ -31,4 +31,6 @@ public class Game  {
     int player2Wins;
 
     Action action;
+
+
 }
